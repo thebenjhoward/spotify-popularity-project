@@ -16,17 +16,13 @@
 #              data conversion.
 ##############################################
 
-# TODO: Finish all TODOs
 
 import copy
 import csv 
 import mysklearn.myutils as myutils
-from tabulate import tabulate # uncomment if you want to use the pretty_print() method
-# install tabulate with: pip install tabulate
+from tabulate import tabulate
+# If issue with tabulate, install tabulate with: pip install tabulate
 
-# required functions/methods are noted with TODOs
-# provided unit tests are in test_mypytable.py
-# do not modify this class name, required function/method headers, or the unit tests
 class MyPyTable:
     """Represents a 2D table of data with column names.
 
@@ -42,6 +38,7 @@ class MyPyTable:
             column_names(list of str): initial M column names (None if empty)
             data(list of list of obj): initial table data in shape NxM (None if empty)
         """
+
         if column_names is None:
             column_names = []
         self.column_names = copy.deepcopy(column_names)
@@ -49,9 +46,31 @@ class MyPyTable:
             data = []
         self.data = copy.deepcopy(data)
 
-    def convert_dict_to_mypytable(self, dict):
-        """TODO: Finish header"""
-        pass # TODO: Finish function
+    def convert_dict_to_mypytable(self, dictionary, headers=None):
+        """Converts a dictionary to a MyPyTable
+        If no headers are provided, column names are index-based (att0, att1, ...)
+
+        Args:
+            dictionary(dictionary of values): The dict we're converting
+            headers(list of strings): Header labels for each col
+        """
+
+        # Grab the dictionary items and convert them to a list for easy traversal
+        # Then save them as MyPyTable data
+        dict_items = list(dictionary.items())
+        for item in dict_items:
+            list_items = list(item)
+            new_data_entry = []
+            for list_item in list_items:
+                new_data_entry.append(list_item)
+            self.data.append(new_data_entry)
+
+        if headers == None: # Load column names (which are att + index number... example att0 or att1)
+            for index in range(len(self.data[0])): # Only need to check one row of data
+                self.column_names.append("att" + index)
+        else: # Load column names using headers
+            for header in headers:
+                self.column_names.append(header)
 
     def pretty_print(self):
         """Prints the table in a nicely formatted grid structure.

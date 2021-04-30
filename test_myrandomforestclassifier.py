@@ -12,6 +12,14 @@
 
 # TODO: Finish all TODOs
 
+import numpy as np # TODO: Needed?
+
+from mysklearn.myrandomforestclassifier import MyRandomForestClassifier
+
+# For dict dataset (convert to a MyPyTable)
+import mysklearn.mypytable
+from mysklearn.mypytable import MyPyTable 
+
 # TODO: Interview dataset with different parameters (such as N = 20, M = 7, and F = 2)
 header = ["level", "lang", "tweets", "phd", "interviewed_well"]
 table = [

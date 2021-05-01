@@ -16,28 +16,58 @@
 import mysklearn.myutils as myutils
 
 class MyRandomForestClassifier:
-    def __init__(self):
-        """TODO: Finish header"""
-        pass # TODO: Finish
+    def __init__(self, N, M, F):
+        """Initializer for MyRandomForestClassifier.
 
-    def fit(self):
-        """TODO: Finish header"""
-        pass # TODO: Finish
+        Args:
+            N(int):
+            M(int):
+            F(int):
+        TODO: Finish header
+        """
+
+        self.N = N
+        self.M = M
+        self.F = F
+        self.X_train = None
+        self.y_train = None
+        self.forest = None
+
+    def fit(self, X_train, y_train):
+        """Fits a decision tree classifier to X_train and y_train using the random forest algorithm.
+
+        Args:
+            X_train(list of list of obj): The list of training instances (samples). 
+                The shape of X_train is (n_train_samples, n_features)
+            y_train(list of obj): The target y values (parallel to X_train)
+                The shape of y_train is n_train_samples
+        """
+
+        """
+        Random forest algorithm (from project assignment description):
+            1. Generate a random stratified test set consisting of one third of the original data set, with the remaining two thirds of the instances forming the "remainder set".
+            2. Generate N "random" decision trees using bootstrapping (giving a training and validation set) over the remainder set.
+                At each node, build your decision trees by randomly selecting F of the remaining attributes as candidates to partition on.
+                This is the standard random forest approach discussed in class.
+                Note that to build your decision trees you should still use entropy;
+                however, you are selecting from only a (randomly chosen) subset of the available attributes.
+            3. Select the M most accurate of the N decision trees using the corresponding validation sets.
+            4. Use simple majority voting to predict classes using the M decision trees over the test set. (save for predict?)
+        """
+
+        # Set X_train and y_train (if not already loaded)
+        if X_train == None:
+            self.X_train = X_train
+        if y_train == None:
+            self.y_train = y_train
+
+        # Generate test and remainder sets
+        test_set, remainder_set = myutils.make_test_and_remainder_sets(X_train)
+
+        # Create N "random" decision trees using bootstrapping over the remainder set
+
+        # TODO: Finish
 
     def predict(self):
         """TODO: Finish header"""
         pass # TODO: Finish
-
-"""
-1. Generate a random stratified test set consisting of one third of the original data set, with the remaining two thirds of the instances forming the "remainder set".
-2. Generate N "random" decision trees using bootstrapping (giving a training and validation set) over the remainder set. At each node, build your decision trees by randomly selecting F of the remaining attributes as candidates to partition on. This is the standard random forest approach discussed in class. Note that to build your decision trees you should still use entropy; however, you are selecting from only a (randomly chosen) subset of the available attributes.
-3. Select the M most accurate of the N decision trees using the corresponding validation sets.
-4. Use simple majority voting to predict classes using the M decision trees over the test set.
-
-Note that N, M, and F are all parameters that need to be tuned.
-Run your random forest algorithm for each data set to see the variation of results for different values of the parameters  N, M, and F.
-Note that for each setting of  N, M, and F, you will need to run your program multiple times because of the randomly generated remainder set to get a sense of the settings (e.g., you might run each setting 5 times).
-You should try a wide range of values including large values for  N.
-Report the results (i.e., the values for  N, M, and F , the accuracy, and the confusion matrices) that seem to give the best results for your dataset.
-You should output the accuracy of the corresponding single "normal" decision tree as well for comparison. Report on the settings you tried and the results you obtained.
-"""

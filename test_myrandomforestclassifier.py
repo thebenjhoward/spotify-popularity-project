@@ -20,7 +20,6 @@ from mysklearn.myrandomforestclassifier import MyRandomForestClassifier
 import mysklearn.mypytable
 from mysklearn.mypytable import MyPyTable 
 
-# TODO: Interview dataset with different parameters (such as N = 20, M = 7, and F = 2)
 header = ["level", "lang", "tweets", "phd", "interviewed_well"]
 table = [
         ["Senior", "Java", "no", "no", "False"],
@@ -38,9 +37,28 @@ table = [
         ["Mid", "Java", "yes", "no", "True"],
         ["Junior", "Python", "no", "yes", "False"]
     ]
+# TODO: Finish all answers
+forest_class1_fit_answer = []
+forest_class2_fit_answer = []
+forest_class3_fit_answer = []
+forest_class1_predict_answer = []
+forest_class2_predict_answer = []
+forest_class3_predict_answer = []
 
 def test_random_forest_classifier_fit():
+    forest_class1 = MyRandomForestClassifier(4, 2, 2)
+    X_train = table
+    y_train = []
+    for row in X_train:
+        y_train.append(row[-1])
+    forest_class1.fit(X_train, y_train)
+    # assert forest_class1.forest == forest_class1_fit_answer
+
+    # TODO: Fit a few more times with different N, M, and F values
+    # N = 20, M = 7, and F = 2
+    # ... and then another
+
     assert False == True # TODO: Finish this
 
-def test_random_forest_classifier_predict():
-    assert False == True # TODO: Finish this
+"""def test_random_forest_classifier_predict():
+    assert False == True # TODO: Finish this"""

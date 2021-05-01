@@ -14,8 +14,8 @@
 
 # TODO: Finish all TODOs
 
-import random # For majority voting leaf node "flip a coin" solution (if the clash result is 50%/50%)
-import math # For log calculations
+import random # For majority voting leaf node "flip a coin" solution (if the clash result is 50%/50%) + test set building
+import math # For log calculations and ceiling function
 import itertools # For subset building
 
 def compute_euclidean_distance(v1, v2):
@@ -878,3 +878,36 @@ def calculate_rule_interestingness(rule, table):
 """------------------------------------------------------------
 -------------- Project Util Functions Begin Here --------------
 ------------------------------------------------------------"""
+
+def make_test_and_remainder_sets(data):
+    """Generates a random stratified test set consisting of 1/3 of the original data set
+    The remaining 2/3 of the instances are returned as the remainder set
+
+    Args:
+        data (list of lists): Original full dataset
+        
+    Returns:
+        test_set (list of lists): List (set) of randomly chosen instances
+        remainder_set (list of lists): Instances not found in the test_set
+    """
+
+    test_set = []
+    remainder_set = []
+
+    # Calc how large each set should be (1/3 of the dataset is test_set and 2/3 is remainder_set)
+    test_set_size = math.ceil(len(data) / 3) # Round up if the result isn't a whole number
+    remainder_set_size = len(data) - test_set_size
+
+    # Fill up the test set
+    for _ in range(test_set_size):
+        rand_index = random.randint(0, len(data) - 1) # Random number 0-(the size of the dataset - 1)... -1 because we're looking at index
+        rand_instance = data[rand_index]
+        if not rand_instance in test_set: # Check if it's already in the test set + saves in test set if not
+            test_set.append(rand_instance)
+
+    # Throw the rest of the instances in the remainder set
+    for instance in data:
+        if not instance in test_set: # Check if it's already in the test set + saves in remainder set if not
+            remainder_set.append(instance)
+
+    return test_set, remainder_set

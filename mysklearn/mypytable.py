@@ -67,7 +67,7 @@ class MyPyTable:
 
         if headers == None: # Load column names (which are att + index number... example att0 or att1)
             for index in range(len(self.data[0])): # Only need to check one row of data
-                self.column_names.append("att" + index)
+                self.column_names.append("att" + str(index))
         else: # Load column names using headers
             for header in headers:
                 self.column_names.append(header)

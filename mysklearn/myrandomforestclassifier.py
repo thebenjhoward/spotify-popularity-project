@@ -14,6 +14,7 @@
 # TODO: Finish all TODOs
 
 import mysklearn.myutils as myutils
+from mysklearn.myclassifiers import MyDecisionTreeClassifier # For tree building
 
 class MyRandomForestClassifier:
     def __init__(self, N, M, F):
@@ -52,22 +53,44 @@ class MyRandomForestClassifier:
                 Note that to build your decision trees you should still use entropy;
                 however, you are selecting from only a (randomly chosen) subset of the available attributes.
             3. Select the M most accurate of the N decision trees using the corresponding validation sets.
-            4. Use simple majority voting to predict classes using the M decision trees over the test set. (save for predict?)
+            4. Use simple majority voting to predict classes using the M decision trees over the test set. (save this step for predict?)
         """
 
-        # Set X_train and y_train (if not already loaded)
-        if X_train == None:
-            self.X_train = X_train
-        if y_train == None:
-            self.y_train = y_train
+        # Set X_train and y_train
+        self.X_train = X_train
+        self.y_train = y_train
 
         # Generate test and remainder sets
         test_set, remainder_set = myutils.make_test_and_remainder_sets(X_train)
 
         # Create N "random" decision trees using bootstrapping over the remainder set
+        N_trees = []
+        for _ in range(self.N):
+            boostrap_sample = myutils.compute_bootstrap_sample(remainder_set) # Grab a bootstrap sample
 
-        # TODO: Finish
+            # Build a tree
+            tree_class = MyDecisionTreeClassifier()
+            tree_class.X_train = X_train
+            tree_class.y_train = y_train
+            tree_class.fit(boostrap_sample, tree_class.y_train, self.F)
 
-    def predict(self):
+            N_trees.append(tree_class.tree) # Keep track of the tree
+
+        # Find the index of the attribute we're predicting
+        # e.g. col #0 in the interview dataset is ['Senior', 'Senior', 'Mid', 'Junior', 'Junior', 'Junior', 'Mid', 'Senior', 'Senior', 'Junior', 'Senior', 'Mid', 'Mid', 'Junior']
+        col_values = []
+        for col_index in range(len(X_train[0])):
+            new_col = []
+            for row in X_train:
+                new_col.append(row[col_index])
+            col_values.append(new_col)
+        predict_col_index = col_values.index(self.y_train)
+
+        # Pick the M most accurate trees from N_trees to populate the forest
+        self.forest = myutils.find_most_accurate_trees(N_trees, self.M, predict_col_index, self.X_train)
+        print(self.forest)
+        print()
+
+    def predict(self, X_test):
         """TODO: Finish header"""
         pass # TODO: Finish

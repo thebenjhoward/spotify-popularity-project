@@ -408,11 +408,11 @@ class MyDecisionTreeClassifier:
 
         """
 
-        self.X_train = None 
+        self.X_train = None
         self.y_train = None
         self.tree = None
 
-    def fit(self, X_train, y_train):
+    def fit(self, X_train, y_train, F):
         """Fits a decision tree classifier to X_train and y_train using the TDIDT (top down induction of decision tree) algorithm.
 
         Args:
@@ -420,6 +420,7 @@ class MyDecisionTreeClassifier:
                 The shape of X_train is (n_train_samples, n_features)
             y_train(list of obj): The target y values (parallel to X_train)
                 The shape of y_train is n_train_samples
+            F(int): Number of attributes to grab (for random forest classifier)
 
         Notes:
             Since TDIDT is an eager learning algorithm, this method builds a decision tree model
@@ -452,7 +453,7 @@ class MyDecisionTreeClassifier:
         available_attributes = headers.copy()
 
         # Initial tdidt() call
-        tree = myutils.tdidt(train, available_attributes, headers, domains)
+        tree = myutils.tdidt(train, available_attributes, headers, domains, F)
         self.tree = tree
         
     def predict(self, X_test):
@@ -470,7 +471,7 @@ class MyDecisionTreeClassifier:
         for X_test_value in X_test:
             prediction = myutils.predict_recursive_helper(self.tree, X_test_value)
             if prediction == None: # Pick a random row and use that as the prediction
-                random_index = random.randint(0, len(self.y_train))
+                random_index = random.randint(0, (len(self.y_train) - 1))
                 prediction = self.y_train[random_index]
             y_predicted.append(prediction)
 

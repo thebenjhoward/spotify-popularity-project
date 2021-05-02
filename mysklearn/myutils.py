@@ -15,8 +15,11 @@
 # TODO: Finish all TODOs
 
 import random # For majority voting leaf node "flip a coin" solution (if the clash result is 50%/50%) + test set building
+random.seed(0)
 import math # For log calculations and ceiling function
 import itertools # For subset building
+from mysklearn.myclassifiers import MyDecisionTreeClassifier # For tree building
+import mysklearn.myevaluation as myevaluation
 
 def compute_euclidean_distance(v1, v2):
     """Calculate the euclidean distance between two vectors
@@ -237,7 +240,7 @@ def partition_instances(instances, split_attribute, headers, domains):
                 
     return partitions
 
-def tdidt(current_instances, available_attributes, headers, domains):
+def tdidt(current_instances, available_attributes, headers, domains, F):
     """Create a tree given a set of instances
     Handles 3 cases (listed in the comments below)
 
@@ -246,13 +249,15 @@ def tdidt(current_instances, available_attributes, headers, domains):
         available_attributes(list): Attribute names we can still split on
         headers(list): All attribute names
         domains(dict): Possible values for all atts
+        F(int): Number of attributes to grab
         
     Returns:
         A constructed tree (as a list of lists of lists...)
     """
     
     # Select an attribute to split on, then remove if from available attributes
-    split_attribute = select_attribute(current_instances, available_attributes, domains, (len(available_attributes) - 1))
+    subset = compute_random_subset(available_attributes, F) # Generate random subset of F available_attributes
+    split_attribute = select_attribute(current_instances, subset, domains, (len(available_attributes) - 1))
     available_attributes.remove(split_attribute)
     tree = ["Attribute", split_attribute]
 
@@ -279,7 +284,7 @@ def tdidt(current_instances, available_attributes, headers, domains):
             leaf_subtree = ["Leaf", leaf_value, len(current_instances), len(current_instances)]
             values_subtree.append(leaf_subtree)
         else: # All base cases are false... time to recurse!
-            subtree = tdidt(partition, available_attributes.copy(), headers, domains)
+            subtree = tdidt(partition, available_attributes.copy(), headers, domains, F)
             values_subtree.append(subtree)
         tree.append(values_subtree)
     return tree
@@ -911,3 +916,118 @@ def make_test_and_remainder_sets(data):
             remainder_set.append(instance)
 
     return test_set, remainder_set
+
+def compute_bootstrap_sample(table):
+    """Walk trough n times (where n is the table length), grabbing a random instance
+    Can be repeats (aka "with replacement")
+
+    Args:
+        table (list of lists): Dataset (remainder set in the case of a random forest classifier)
+        
+    Returns:
+        sample (list of lists): Bootstrap sample with N entries
+    """
+
+    n = len(table)
+    sample = []
+
+    for _ in range(n): # Loop through table size times (14 in the case of the interview dataset)
+        rand_index = random.randrange(0, n)
+        sample.append(table[rand_index])
+
+    return sample
+
+def compute_random_subset(attributes, F):
+    """Accepts a list of attribute values and a number of values to randomly create a subset of
+    Used to train each tree classifier on "different" attributes
+
+    Args:
+        attributes (list of values): Possible columns to choose from
+        F (int): Number of values
+        
+    Returns:
+        shuffled[:F] (list of values): Shuffled subset with no duplicates
+    """
+
+    shuffled_attributes = attributes[:]
+    random.shuffle(shuffled_attributes)
+    return shuffled_attributes[:F]
+
+def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
+    """Prunign N_trees to M number of trees using prediction accuracy (save the M most accurate)
+
+    Args:
+        N_trees (list of lists): N trees previously generated
+        M (int): Number of trees we want
+        predict_col_index (int): Index of the col we're predicting
+        X_train (list of values): Full dataset without column names
+        
+    Returns:
+        M_trees (list of lists): M best N_trees (in terms of accuracy)
+
+    Note:
+        Assumes len(N_trees) <= M
+    """
+
+    M_trees = []
+    N_trees_calcs = [] # Will be parallel to N_trees (e.g. accuracy of N_tree[0] is in N_trees_calcs[0])
+
+    # Grab actual + predicted values
+    actual_values = []
+    predicted_values = []
+    for tree in N_trees:
+        new_actual_values = []
+        new_predicted_values = []
+        
+        # Build a tree with the tree classifier for predicting later on
+        dtree_classifier = MyDecisionTreeClassifier()
+        dtree_classifier.X_train = X_train
+        y_train = []
+        for row in X_train:
+            y_train.append(row[predict_col_index])
+        dtree_classifier.y_train = y_train
+        dtree_classifier.tree = tree
+
+        # Build tests for the first 5 rows of the dataset to run preditions on (only use 1st 5 instances in case of large datasets)
+        # So, 5 X_tests, actual values, and predicted values per tree
+        X_train_first_5 = []
+        for i in range(5):
+            X_train_first_5.append(X_train[i])
+        for row in X_train_first_5:
+            X_test = []
+            for col_index in range(len(row)):
+                if col_index != predict_col_index: # Ignore the col we're predicting on/leave it out of our X_test
+                    X_test.append(row[col_index])
+                else: # Keep track of the actual value while we're at it
+                    new_actual_values.append(row[col_index])
+
+            # Make predictions
+            prediction = dtree_classifier.predict(X_test)
+            new_predicted_values.append(prediction[0])
+        actual_values.append(new_actual_values)
+        predicted_values.append(new_predicted_values)
+
+    # Build confusion matrix for results of each tree and then use these to calculate accuracy
+    for index in range(len(N_trees)):
+        # Build labels bank
+        labels = []
+        for value in predicted_values[index]:
+            if not value in labels:
+                labels.append(value)
+        matrix = myevaluation.confusion_matrix(actual_values[index], predicted_values[index], labels)
+        # Calculate accuracy for each prediction
+        accuracy, _ = calculate_accuracy_and_error_rate(matrix)
+        N_trees_calcs.append(accuracy)
+
+    # Sort our calculations from lowerst to highest (least to most accurate)
+    M_trees_calc_lowest_to_highest = N_trees_calcs.copy()
+    M_trees_calc_lowest_to_highest.sort()
+
+    # Grab the M top "most accurate" trees... the last M values in M_trees_calc_lowest_to_highest represent the top trees, so keep track of those
+    index = len(N_trees_calcs) - 1 # Start at the last spot
+    while len(M_trees) < M:
+        M_trees_calc_index = N_trees_calcs.index(M_trees_calc_lowest_to_highest[index])
+        M_trees.append(N_trees[M_trees_calc_index])
+        index -= 1
+
+    return M_trees

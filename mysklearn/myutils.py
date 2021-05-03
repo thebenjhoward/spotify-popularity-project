@@ -12,7 +12,6 @@
 #              includes a header where PA utils end and project utils begin.
 ##############################################
 
-# TODO: Finish all TODOs
 
 import random # For majority voting leaf node "flip a coin" solution (if the clash result is 50%/50%) + test set building
 random.seed(0)
@@ -315,7 +314,7 @@ def perform_majority_voting(clashing_instances, domains):
                 count += 1
         domain_counts.append(count)
 
-    # Check if all of the counts are the same (if so, we have an even_split... and if not, find the )
+    # Check if all of the counts are the same (if so, we have an even_split)
     count_to_check = domain_counts[0]
     for count in domain_counts:
         if count_to_check != count:
@@ -954,7 +953,7 @@ def compute_random_subset(attributes, F):
     return shuffled_attributes[:F]
 
 def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
-    """Prunign N_trees to M number of trees using prediction accuracy (save the M most accurate)
+    """Pruning N_trees to M number of trees using prediction accuracy (save the M most accurate)
 
     Args:
         N_trees (list of lists): N trees previously generated
@@ -965,7 +964,7 @@ def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
     Returns:
         M_trees (list of lists): M best N_trees (in terms of accuracy)
 
-    Note:
+    Notes:
         Assumes len(N_trees) <= M
     """
 

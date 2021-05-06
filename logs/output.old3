@@ -1,0 +1,1120 @@
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6277471539452433
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33819   37750     71569  47.3
+10-100        19179   62183     81362  76.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo']
+accuracy: 0.6273482812510217
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34714   36855     71569  48.5
+10-100        20135   61227     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6270736475927052
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33695   37874     71569  47.1
+10-100        19158   62204     81362  76.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6268382473141482
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34870   36699     71569  48.7
+10-100        20369   60993     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6284664325741675
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34936   36633     71569  48.8
+10-100        20186   61176     81362  75.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.628237571192237
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33987   37582     71569  47.5
+10-100        19272   62090     81362  76.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness']
+accuracy: 0.627766770635123
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34938   36631     71569  48.8
+10-100        20295   61067     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6263085966873949
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34734   36835     71569  48.5
+10-100        20314   61048     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6259685740628126
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33853   37716     71569  47.3
+10-100        19485   61877     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6276425315992179
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34943   36626     71569  48.8
+10-100        20319   61043     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6281525655360914
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34125   37444     71569  47.7
+10-100        19423   61939     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'time_sig']
+accuracy: 0.6267205471748697
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34719   36850     71569  48.5
+10-100        20236   61126     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6275902204262053
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35011   36558     71569  48.9
+10-100        20395   60967     81362  74.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6246673336341225
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33416   38153     71569  46.7
+10-100        19247   62115     81362  76.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6277144594621104
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33898   37671     71569  47.4
+10-100        19263   62099     81362  76.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6279498597406673
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34908   36661     71569  48.8
+10-100        20237   61125     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness']
+accuracy: 0.6283356546416358
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34787   36782     71569  48.6
+10-100        20057   61305     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6278713929811484
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34948   36621     71569  48.8
+10-100        20289   61073     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6239807494883314
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33383   38186     71569  46.6
+10-100        19319   62043     81362  76.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6273940535274077
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34889   36680     71569  48.7
+10-100        20303   61059     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6288979997515219
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34706   36863     71569  48.5
+10-100        19890   61472     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'time_sig']
+accuracy: 0.627609837116085
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34099   37470     71569  47.6
+10-100        19480   61882     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6277863873250028
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35075   36494     71569  49.0
+10-100        20429   60933     81362  74.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.5579509713530939
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          24216   47353     71569  33.8
+10-100        20250   61112     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6250923619148505
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33953   37616     71569  47.4
+10-100        19719   61643     81362  75.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6275771426329522
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34963   36606     71569  48.9
+10-100        20349   61013     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'loudness', 'time_sig']
+accuracy: 0.6287606829223636
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34911   36658     71569  48.8
+10-100        20116   61246     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.5556688964304163
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25372   46197     71569  35.5
+10-100        21755   59607     81362  73.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6272894311813825
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34005   37564     71569  47.5
+10-100        19435   61927     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5561854692639164
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          23961   47608     71569  33.5
+10-100        20265   61097     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6302973236296108
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34929   36640     71569  48.8
+10-100        19899   61463     81362  75.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness']
+accuracy: 0.6281460266394648
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34904   36665     71569  48.8
+10-100        20203   61159     81362  75.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6274594424936736
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35033   36536     71569  48.9
+10-100        20437   60925     81362  74.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.5566758865109102
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          23984   47585     71569  33.5
+10-100        20213   61149     81362  75.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6271455754555976
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34918   36651     71569  48.8
+10-100        20370   60992     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6291399389267055
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35067   36502     71569  49.0
+10-100        20214   61148     81362  75.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6282310322956104
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34752   36817     71569  48.6
+10-100        20038   61324     81362  75.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6250138951553315
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33969   37600     71569  47.5
+10-100        19747   61615     81362  75.7
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5603311297251702
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          26022   45547     71569  36.4
+10-100        21692   59670     81362  73.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.627531370356566
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34868   36701     71569  48.7
+10-100        20261   61101     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6258312572336544
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33787   37782     71569  47.2
+10-100        19440   61922     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6276948427722306
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35017   36552     71569  48.9
+10-100        20385   60977     81362  74.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5561723914706632
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          24180   47389     71569  33.8
+10-100        20486   60876     81362  74.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5582452217012901
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          24668   46901     71569  34.5
+10-100        20657   60705     81362  74.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.625680862611243
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33789   37780     71569  47.2
+10-100        19465   61897     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6301338512139462
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35118   36451     71569  49.1
+10-100        20113   61249     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5554334961518593
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          22326   49243     71569  31.2
+10-100        18745   62617     81362  77.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6272959700780091
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34791   36778     71569  48.6
+10-100        20220   61142     81362  75.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6251642897777429
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33087   38482     71569  46.2
+10-100        18842   62520     81362  76.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.627407131320661
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33886   37683     71569  47.3
+10-100        19298   62064     81362  76.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5531187267460489
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          21501   50068     71569  30.0
+10-100        18274   63088     81362  77.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6269232529702938
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34639   36930     71569  48.4
+10-100        20125   61237     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6255043124023252
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34057   37512     71569  47.6
+10-100        19760   61602     81362  75.7
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6265701525524583
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33644   37925     71569  47.0
+10-100        19184   62178     81362  76.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5523602147373652
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          22474   49095     71569  31.4
+10-100        19363   61999     81362  76.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6277602317384965
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34948   36621     71569  48.8
+10-100        20306   61056     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6256743237146164
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35107   36462     71569  49.1
+10-100        20784   60578     81362  74.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6266878526917368
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34313   37256     71569  47.9
+10-100        19835   61527     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo']
+accuracy: 0.6298199841758702
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33150   38419     71569  46.3
+10-100        18193   63169     81362  77.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6251839064676227
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33789   37780     71569  47.2
+10-100        19541   61821     81362  76.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6269101751770406
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34621   36948     71569  48.4
+10-100        20109   61253     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6253473788832873
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33161   38408     71569  46.3
+10-100        18888   62474     81362  76.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6274202091139142
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34241   37328     71569  47.8
+10-100        19651   61711     81362  75.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness']
+accuracy: 0.626387063446914
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34649   36920     71569  48.4
+10-100        20217   61145     81362  75.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6261451242717304
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33959   37610     71569  47.4
+10-100        19564   61798     81362  76.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6280544820866927
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34743   36826     71569  48.5
+10-100        20056   61306     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6242161497668883
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35036   36533     71569  49.0
+10-100        20936   60426     81362  74.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6286037494033256
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34402   37167     71569  48.1
+10-100        19631   61731     81362  75.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'time_sig']
+accuracy: 0.6288064551987498
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33034   38535     71569  46.2
+10-100        18232   63130     81362  77.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6237388103131477
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33546   38023     71569  46.9
+10-100        19519   61843     81362  76.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6263282133772747
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34462   37107     71569  48.2
+10-100        20039   61323     81362  75.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6293034113423701
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34710   36859     71569  48.5
+10-100        19832   61530     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6258508739235341
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34866   36703     71569  48.7
+10-100        20516   60846     81362  74.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness']
+accuracy: 0.6270540309028254
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34645   36924     71569  48.4
+10-100        20111   61251     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6239807494883314
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33488   38081     71569  46.8
+10-100        19424   61938     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6286822161628447
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34646   36923     71569  48.4
+10-100        19863   61499     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6290156998908004
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33327   38242     71569  46.6
+10-100        18493   62869     81362  77.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6262889799975152
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34940   36629     71569  48.8
+10-100        20523   60839     81362  74.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'time_sig']
+accuracy: 0.6265570747592051
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33668   37901     71569  47.0
+10-100        19210   62152     81362  76.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.5612923475292779
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25946   45623     71569  36.3
+10-100        21469   59893     81362  73.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6231895429965147
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33782   37787     71569  47.2
+10-100        19839   61523     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6302188568700917
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34696   36873     71569  48.5
+10-100        19678   61684     81362  75.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6252296787440087
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34641   36928     71569  48.4
+10-100        20386   60976     81362  74.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'loudness', 'time_sig']
+accuracy: 0.626040501925705
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34383   37186     71569  48.0
+10-100        20004   61358     81362  75.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.5541911057928085
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          24835   46734     71569  34.7
+10-100        21444   59918     81362  73.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6299573010050284
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33783   37786     71569  47.2
+10-100        18805   62557     81362  76.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6277013816688573
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34674   36895     71569  48.4
+10-100        20041   61321     81362  75.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5605076799340879
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          26004   45565     71569  36.3
+10-100        21647   59715     81362  73.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness']
+accuracy: 0.6291334000300789
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34759   36810     71569  48.6
+10-100        19907   61455     81362  75.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.5617631480863919
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25311   46258     71569  35.4
+10-100        20762   60600     81362  74.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6307615852900982
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34527   37042     71569  48.2
+10-100        19426   61936     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.622699125749521
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33863   37706     71569  47.3
+10-100        19995   61367     81362  75.4
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6251512119844898
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          35140   36429     71569  49.1
+10-100        20897   60465     81362  74.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6303300181127437
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33572   37997     71569  46.9
+10-100        18537   62825     81362  77.2
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'dancibility', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5613708142887969
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25412   46157     71569  35.5
+10-100        20923   60439     81362  74.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.629493039344541
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34381   37188     71569  48.0
+10-100        19474   61888     81362  76.1
+------------  ------  --------  -----  ---------------
+
+attribs: ['release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5611746473899994
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25755   45814     71569  36.0
+10-100        21296   60066     81362  73.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6290745499604397
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34721   36848     71569  48.5
+10-100        19878   61484     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6261255075818506
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34904   36665     71569  48.8
+10-100        20512   60850     81362  74.8
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'is_explicit', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5636398114182213
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25506   46063     71569  35.6
+10-100        20670   60692     81362  74.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6245954057712302
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33800   37769     71569  47.2
+10-100        19642   61720     81362  75.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6266420804153507
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34916   36653     71569  48.8
+10-100        20445   60917     81362  74.9
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.6290941666503195
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34929   36640     71569  48.8
+10-100        20083   61279     81362  75.3
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5605665300037271
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          24937   46632     71569  34.8
+10-100        20571   60791     81362  74.7
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6223917976080716
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33772   37797     71569  47.2
+10-100        19951   61411     81362  75.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'loudness']
+accuracy: 0.6272240422151166
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34416   37153     71569  48.1
+10-100        19856   61506     81362  75.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6289633887177878
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33142   38427     71569  46.3
+10-100        18316   63046     81362  77.5
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'release_year', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5596707011658852
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          25412   46157     71569  35.5
+10-100        21183   60179     81362  74.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6228102869921729
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          33678   37891     71569  47.1
+10-100        19793   61569     81362  75.7
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'dancibility', 'energy', 'tempo', 'time_sig']
+accuracy: 0.6284664325741675
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          32964   38605     71569  46.1
+10-100        18214   63148     81362  77.6
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'artist_popularity', 'release_year', 'duration', 'is_explicit', 'dancibility', 'energy', 'loudness', 'time_sig']
+accuracy: 0.6256154736449772
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          34637   36932     71569  48.4
+10-100        20323   61039     81362  75.0
+------------  ------  --------  -----  ---------------
+
+attribs: ['artist_count', 'duration', 'is_explicit', 'dancibility', 'energy', 'tempo', 'loudness', 'time_sig']
+accuracy: 0.5559173745022264
+confusion matrix:
+------------  ------  --------  -----  ---------------
+Popularity    0-10    10-100    Total  Recognition (%)
+============  ======  ========
+0-10          23058   48511     71569  32.2
+10-100        19403   61959     81362  76.2
+------------  ------  --------  -----  ---------------
+

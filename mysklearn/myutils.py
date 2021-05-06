@@ -17,8 +17,11 @@ import random # For majority voting leaf node "flip a coin" solution (if the cla
 random.seed(0)
 import math # For log calculations and ceiling function
 import itertools # For subset building
-from mysklearn.myclassifiers import MyDecisionTreeClassifier # For tree building
+#from mysklearn.myclassifiers import MyDecisionTreeClassifier # For tree building
 import mysklearn.myevaluation as myevaluation
+from mysklearn.myeval_forest import confusion_matrix
+from tabulate import tabulate
+from uuid import uuid1
 
 def compute_euclidean_distance(v1, v2):
     """Calculate the euclidean distance between two vectors
@@ -97,6 +100,13 @@ def normalize_data(values):
         normalized_values[index] = normalized_values[index] / max_value
     
     return normalized_values
+
+def normalize_col(table, col):
+    min_val = min(table, key=lambda x: x[col])[col]
+    max_val = max(table, key=lambda x: x[col])[col]
+
+    for row in table:
+        row[col] = (row[col] - min_val) / max_val
 
 def calculate_accuracy_and_error_rate(matrix):
     """Uses a confusion matrix to determine the amount of correct and incorrect guesses
@@ -254,8 +264,11 @@ def tdidt(current_instances, available_attributes, headers, domains, F):
         A constructed tree (as a list of lists of lists...)
     """
     
-    # Select an attribute to split on, then remove if from available attributes
-    subset = compute_random_subset(available_attributes, F) # Generate random subset of F available_attributes
+    # Select an attribute to split on, then remove it from available attributes
+    if(F is not None):
+        subset = compute_random_subset(available_attributes, min(F, len(available_attributes))) # Generate random subset of F available_attributes
+    else:
+        subset = available_attributes
     split_attribute = select_attribute(current_instances, subset, domains, (len(available_attributes) - 1))
     available_attributes.remove(split_attribute)
     tree = ["Attribute", split_attribute]
@@ -877,11 +890,81 @@ def calculate_rule_interestingness(rule, table):
 
     return support, confidence, lift
 
+def graphviz_traversal(curr_item, attribute_names, lines=None):
+    """ Traverses a tree while writing graph information to a given function
+        pointer
+        
+        Args:
+            curr_item: the current node of the tree being viewed
+            attribute_names: if provided, names for each attribute
+            lines(list of str or None):
+                If given, the set of lines to write to. If it is none, initializes
+                an empty array that will be passed to each recursion and returns
+                it at the end.
 
+        Returns:
+            lines(list of str): Only for top level call
+            -- OR --
+            prev_id: the previous id added 
+    """
 
-"""------------------------------------------------------------
--------------- Project Util Functions Begin Here --------------
-------------------------------------------------------------"""
+    if(lines is None):
+        is_top = True
+        lines = [ 
+            "graph g {",
+            "    rankdir=TB;"
+        ]
+    else:
+        is_top = False
+
+    prev_id = ""
+
+    if(attribute_names == None):
+        get_name = lambda att: att
+    else:
+        get_name = lambda att: attribute_names[int(att[3:])]
+
+    if(curr_item[0] == "Attribute"):
+        prev_id = curr_item[1] + "_" + str(uuid1()).replace('-','')
+        lines.append("    {id} [style=filled fillcolor=cornsilk shape=box label={name}];".format(
+            id=prev_id, name=get_name(curr_item[1]).replace(" ", "_")))
+        for val in curr_item[2:]:
+            child_id = graphviz_traversal(val[2], attribute_names, lines=lines)
+            lines.append("    {n1} -- {n2} [label={value}];".format(n1=prev_id, n2=child_id, value=val[1]))
+        
+    elif(curr_item[0] == "Leaf"):
+        prev_id = "leaf_" + str(uuid1()).replace('-','')
+        lines.append("    {id} [style=filled fillcolor=lightskyblue1 label={value}];".format(
+            id=prev_id, value=curr_item[1]))
+        
+
+    if(is_top):
+        lines.append("}")
+        return lines
+    else:
+        return prev_id
+
+def separate_by_value(yvals):
+    """Gets the indices of all occurances of each value on the list
+
+    Args:
+        yvals(list of obj): The values being counted
+
+    Returns:
+        freq(dict): The total times each value occurs in the list, 
+            indexed by those values
+    """
+    bins = {}
+    for i, val in enumerate(yvals):
+        if(val not in bins):
+            bins[val] = []
+        bins[val].append(i)
+    
+    return bins
+
+#--------------------------------------------------------------
+#------------- Project Util Functions Begin Here --------------
+#--------------------------------------------------------------
 
 def make_test_and_remainder_sets(data):
     """Generates a random stratified test set consisting of 1/3 of the original data set
@@ -900,7 +983,6 @@ def make_test_and_remainder_sets(data):
 
     # Calc how large each set should be (1/3 of the dataset is test_set and 2/3 is remainder_set)
     test_set_size = math.ceil(len(data) / 3) # Round up if the result isn't a whole number
-    remainder_set_size = len(data) - test_set_size
 
     # Fill up the test set
     for _ in range(test_set_size):
@@ -952,7 +1034,7 @@ def compute_random_subset(attributes, F):
     random.shuffle(shuffled_attributes)
     return shuffled_attributes[:F]
 
-def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
+def find_most_accurate_trees(N_trees, M, predict_col_index, X_train, tree_class):
     """Pruning N_trees to M number of trees using prediction accuracy (save the M most accurate)
 
     Args:
@@ -979,7 +1061,7 @@ def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
         new_predicted_values = []
         
         # Build a tree with the tree classifier for predicting later on
-        dtree_classifier = MyDecisionTreeClassifier()
+        dtree_classifier = tree_class()
         dtree_classifier.X_train = X_train
         y_train = []
         for row in X_train:
@@ -1013,7 +1095,7 @@ def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
         for value in predicted_values[index]:
             if not value in labels:
                 labels.append(value)
-        matrix = myevaluation.confusion_matrix(actual_values[index], predicted_values[index], labels)
+        matrix = confusion_matrix(actual_values[index], predicted_values[index], labels)
         # Calculate accuracy for each prediction
         accuracy, _ = calculate_accuracy_and_error_rate(matrix)
         N_trees_calcs.append(accuracy)
@@ -1030,3 +1112,77 @@ def find_most_accurate_trees(N_trees, M, predict_col_index, X_train):
         index -= 1
 
     return M_trees
+
+def format_confusion_matrix(matrix, header):
+    """Formats a confusion_matrix into a pretty string ready for printing
+
+    Args:
+        matrix(list of list of obj): the matrix being formatted
+        header(list of obj): the name of the class label and its values. 
+            len(matrix) should equal len(header) - 1
+    
+    Returns:
+        pretty_matrix(str): the matrix ready to be printed
+
+    """
+    matrix = matrix.tolist()
+    assert len(matrix) == len(header) - 1
+    
+    mat_header = [*header, "Total", "Recognition (%)"]
+    divider = [ "=" * (len(str(x)) + 2) for x in header]
+
+    for i, row in enumerate(matrix): 
+        total = sum(row)
+        if(total != 0):
+            recog = 100.0 * row[i] / total
+        else:
+            recog = 0.0
+
+        row.insert(0, header[i+1])
+        row.append(total)
+        row.append(round(recog, 1))
+
+    matrix.insert(0, divider)
+    matrix.insert(0, mat_header)
+
+    return tabulate(matrix)
+
+def progress_bar(complete, total, width=25, ch='='):
+    """ Creates a progress bar based on the number of completed
+        tasks over the number of total tasks. Returns enclosed
+        in brackets, with percentage at the end
+
+    Args:
+        complete(int): total complete tasks
+        total(int): total tasks
+        width(int): number of characters wide bar should be
+        ch(str): the character to use for each segment of the loading bar
+    
+    Note:
+        assumes both numbers are positive.
+
+    Returns:
+        bar(str): the progress bar as a string
+
+    Examples:
+        progress_bar(0, 100)  -> '[                         ] 0.0%'
+        progress_bar(30, 100) -> '[=======>                 ] 30.0%'
+        progress_bar(3, 100)  -> '[>                        ] 3.0%'
+        progress_bar(48, 100) -> '[============>            ] 48.0%'
+    
+    """
+
+
+    if(complete == total):
+        return "\033[32;1m[{}] 100.0%\033[0m".format(ch * width)
+    else:
+        ratio = complete / total
+        filled = int(ratio * width)
+        empty = width - filled - 1
+        
+        return "\033[36m[{}>{}] {:.1f}%\033[0m".format(ch * filled, ' ' * empty, round(100*ratio, 1))
+
+def progress_frac(complete, total):
+    ccount = len(str(total)) - len(str(complete))
+
+    return "[ {}{} / {} ]".format(' '*ccount, complete, total)

@@ -1,9 +1,9 @@
 
 
-attribute_names = ["artists_count", "primary_artist", "release_year", "duration", "explicit",
+attribute_names = ["artists_count", "artist_popularity", "release_year", "duration", "explicit",
         "danceability", "energy", "tempo", "loudness", "time_signature", "popularity"]
 
-def generate_columns(song_data):
+def generate_columns(song_data, labels):
     """ Generates a dictionary of all values of each attribute
 
     Args:
@@ -14,12 +14,15 @@ def generate_columns(song_data):
             recommend deleting the song data dictionary if possible here
     """
     cols = {}
-    for attrib in attribute_names:
+    for attrib in attribute_names[:-1]:
         cols[attrib] = []
 
+    cols[attribute_names[-1]] = labels
+
     for song in song_data:
-        for i, attrib in enumerate(attribute_names):
-            cols[attrib].append(song_data[song][i])
+        for i, attrib in enumerate(attribute_names[:-1]):
+            cols[attrib].append(song[i])
+
 
     return cols
 
@@ -44,5 +47,4 @@ def get_frequency(arr):
 
 def get_top_freq(freq_table, n):
     sorted_vals = sorted(freq_table.items(), key=lambda x: x[1])
-
     return sorted_vals[:n]

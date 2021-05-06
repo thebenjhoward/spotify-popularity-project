@@ -86,7 +86,7 @@ class MyRandomForestClassifier:
         predict_col_index = col_values.index(self.y_train)
 
         # Pick the M most accurate trees from N_trees to populate the forest
-        self.forest = myutils.find_most_accurate_trees(N_trees, self.M, predict_col_index, self.X_train)
+        self.forest = myutils.find_most_accurate_trees(N_trees, self.M, predict_col_index, self.X_train, MyDecisionTreeClassifier)
 
     def predict(self, X_test):
         """Makes predictions for test instances in X_test.

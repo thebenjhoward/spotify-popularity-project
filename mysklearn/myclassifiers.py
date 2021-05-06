@@ -21,6 +21,7 @@
 
 import mysklearn.myutils as myutils
 import random # Imported for random number generating (see MyRandomClassifier predict()), because I wasn't sure how to do it without an import
+from os import popen
 
 class MySimpleLinearRegressor:
     """Represents a simple linear regressor.
@@ -412,7 +413,7 @@ class MyDecisionTreeClassifier:
         self.y_train = None
         self.tree = None
 
-    def fit(self, X_train, y_train, F):
+    def fit(self, X_train, y_train, F=None):
         """Fits a decision tree classifier to X_train and y_train using the TDIDT (top down induction of decision tree) algorithm.
 
         Args:
@@ -432,6 +433,7 @@ class MyDecisionTreeClassifier:
 
         self.X_train = X_train
         self.y_train = y_train
+
 
         # Calculate headers (e.g. ["att0", "att1", ...])
         headers = []
@@ -527,7 +529,7 @@ class MyDecisionTreeClassifier:
             print(rule)
 
     # BONUS METHOD
-    def visualize_tree(self, dot_fname, pdf_fname, attribute_names=None):
+    def visualize_tree(self, dot_fname, outfile_fname, attribute_names=None, fmt='pdf'):
         """BONUS: Visualizes a tree via the open source Graphviz graph visualization package and its DOT graph language (produces .dot and .pdf files).
 
         Args:
@@ -542,4 +544,9 @@ class MyDecisionTreeClassifier:
             You will need to install graphviz in the Docker container as shown in class to complete this method.
         """
 
-        pass
+        lines = myutils.graphviz_traversal(self.tree, attribute_names)
+        
+        with open(dot_fname, 'w') as fp:
+            fp.write('\n'.join(lines))
+        
+        popen("dot -T{fmt} -o {outfile} {infile}".format(fmt=fmt, outfile=outfile_fname, infile=dot_fname))
